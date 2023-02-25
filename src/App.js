@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
 import './App.css';
+import Book from './components/Book';
+import BookingTable from './components/BookingTable';
+import BookingForm from './components/U';
+import './index.css';
+import store from './redux/store';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Provider store={store}>
+          <div className="App">
+     <header id="header">
+    <div className="container">
+      <img src="./img/lws-logo.svg" alt="logo" className="logo" />
+      <div className="flex items-center">
+        <button className="text-white min-w-[50px] font-medium" href='#'>Home</button>
+        <button className="log-btn btn">Login</button>
+      </div>
+
     </div>
+  </header>
+        <div>
+        <BookingForm />
+        <Book />
+        <BookingTable />
+        </div>
+    </div>
+    </Provider>
+
   );
 }
 
